@@ -1,36 +1,63 @@
-# Dependencies
-node_modules/
-.pnp
-.pnp.js
+# ─── Xcode ──────────────────────────────────────────────────────────────────
+xcuserdata/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
 
-# Testing
-coverage/
+# ─── Secrets (NEVER commit) ──────────────────────────────────────────────────
+Secrets.xcconfig
+Secrets.swift
+*.xcconfig
+!*.xcconfig.template
+.env
+.env.*
+*.pem
 
-# Production
+# ─── Swift Package Manager ───────────────────────────────────────────────────
+.build/
+.swiftpm/
+*.resolved
+
+# ─── macOS ───────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+Icon
+._*
+
+# ─── Build output ────────────────────────────────────────────────────────────
 build/
 dist/
-.next/
 out/
 
-# Misc
-.DS_Store
-*.pem
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# IDEs
+# ─── IDEs ────────────────────────────────────────────────────────────────────
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# OS
+# ─── Node (planning docs tooling) ────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+coverage/
+
+# ─── Simulator & test artefacts ──────────────────────────────────────────────
+*.sim
+*.trace
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ─── OS ──────────────────────────────────────────────────────────────────────
 Thumbs.db

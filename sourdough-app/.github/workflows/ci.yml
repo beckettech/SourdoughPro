@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    name: Build & Test
+    runs-on: macos-15
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build
+        run: |
+          xcodebuild build \
+            -project SourdoughPro.xcodeproj \
+            -scheme SourdoughPro \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            -derivedDataPath /tmp/sourdough-ci \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            | xcpretty || xcodebuild build \
+              -project SourdoughPro.xcodeproj \
+              -scheme SourdoughPro \
+              -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+              -derivedDataPath /tmp/sourdough-ci \
+              CODE_SIGN_IDENTITY="" \
+              CODE_SIGNING_REQUIRED=NO
+
+      - name: Test
+        run: |
+          xcodebuild test \
+            -project SourdoughPro.xcodeproj \
+            -scheme SourdoughPro \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            -derivedDataPath /tmp/sourdough-ci \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            | xcpretty || xcodebuild test \
+              -project SourdoughPro.xcodeproj \
+              -scheme SourdoughPro \
+              -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+              -derivedDataPath /tmp/sourdough-ci \
+              CODE_SIGN_IDENTITY="" \
+              CODE_SIGNING_REQUIRED=NO
