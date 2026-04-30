@@ -21,7 +21,9 @@ final class MockBakeService: BakeService {
         if persisted {
             let store = JSONFileStore<[BakeSession]>(filename: "bakes.json")
             self.store = store
-            self.sessions = store.load(fallback: [])
+            // Seed with mock fixtures on first install; subsequent launches
+            // load real session history from disk.
+            self.sessions = store.load(fallback: MockBakes.recent)
         } else {
             self.store = nil
             self.sessions = MockBakes.recent

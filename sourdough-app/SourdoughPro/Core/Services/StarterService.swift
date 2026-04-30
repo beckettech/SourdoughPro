@@ -28,9 +28,9 @@ final class MockStarterService: StarterService {
         if persisted {
             let store = JSONFileStore<[Starter]>(filename: "starters.json")
             self.store = store
-            // Fresh installs start empty — no fake Bubbles/Gerty seeding.
-            // Previews and tests that need fixture data use persisted: false.
-            self.starters = store.load(fallback: [])
+            // Seed with mock fixtures on first install (file absent); subsequent
+            // launches load the user's own data from disk.
+            self.starters = store.load(fallback: MockStarters.all)
         } else {
             self.store = nil
             self.starters = MockStarters.all
