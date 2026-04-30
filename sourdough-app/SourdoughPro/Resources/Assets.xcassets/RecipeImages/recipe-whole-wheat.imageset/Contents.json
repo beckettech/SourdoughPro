@@ -1,0 +1,6 @@
+{
+  "images": [
+    { "idiom": "universal", "filename": "recipe-whole-wheat.jpg", "scale": "1x" }
+  ],
+  "info": { "author": "xcode", "version": 1 }
+}

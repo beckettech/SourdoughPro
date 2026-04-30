@@ -56,29 +56,40 @@ struct RecipeDetailView: View {
     // MARK: Hero — solid warm amber surface, no gradient
 
     private var heroBanner: some View {
-        HStack(spacing: SDSpace.s5) {
-            // Icon block
-            ZStack {
-                RoundedRectangle(cornerRadius: SDRadius.lg)
-                    .fill(SDColor.primary.opacity(0.10))
-                    .frame(width: 80, height: 80)
-                Image(systemName: SDIcon.bread)
-                    .resizable().scaledToFit()
-                    .foregroundStyle(SDColor.primary)
-                    .frame(width: 44, height: 44)
-            }
-
-            VStack(alignment: .leading, spacing: SDSpace.s2) {
-                // Difficulty badge
+        VStack(alignment: .leading, spacing: 0) {
+            // Photo or icon placeholder
+            ZStack(alignment: .bottomLeading) {
+                if let asset = recipe.imageUrl, let ui = UIImage(named: asset) {
+                    Image(uiImage: ui)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 200)
+                        .clipped()
+                } else {
+                    Rectangle()
+                        .fill(SDColor.primary.opacity(0.08))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 200)
+                    Image(systemName: SDIcon.bread)
+                        .resizable().scaledToFit()
+                        .foregroundStyle(SDColor.primary.opacity(0.4))
+                        .frame(width: 64, height: 64)
+                        .frame(maxWidth: .infinity)
+                }
+                // Difficulty badge overlay
                 difficultyBadge(recipe.difficulty)
+                    .padding(SDSpace.s3)
+            }
+            // Summary block below image
+            VStack(alignment: .leading, spacing: SDSpace.s2) {
                 Text(recipe.summary)
                     .font(SDFont.bodySmall)
                     .foregroundStyle(SDColor.textSecondary)
-                    .lineLimit(3)
+                    .fixedSize(horizontal: false, vertical: true)
             }
+            .padding(SDSpace.s4)
         }
-        .padding(SDSpace.s5)
-        .frame(maxWidth: .infinity, alignment: .leading)
         .background(SDColor.surfaceElevated)
         .clipShape(RoundedRectangle(cornerRadius: SDRadius.xl))
         .overlay(

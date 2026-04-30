@@ -5,14 +5,22 @@ struct RecipeRow: View {
 
     var body: some View {
         HStack(spacing: SDSpace.s4) {
-            // Thumbnail placeholder
+            // Recipe thumbnail — bundled asset or icon fallback
             ZStack {
                 RoundedRectangle(cornerRadius: SDRadius.sm)
-                    .fill(SDColor.secondary.opacity(0.5))
+                    .fill(SDColor.primary.opacity(0.08))
                     .frame(width: 64, height: 64)
-                Image(systemName: SDIcon.bread)
-                    .font(.system(size: 28))
-                    .foregroundStyle(SDColor.primary)
+                if let asset = recipe.imageUrl, let ui = UIImage(named: asset) {
+                    Image(uiImage: ui)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 64, height: 64)
+                        .clipShape(RoundedRectangle(cornerRadius: SDRadius.sm))
+                } else {
+                    Image(systemName: SDIcon.bread)
+                        .font(.system(size: 28))
+                        .foregroundStyle(SDColor.primary)
+                }
             }
 
             VStack(alignment: .leading, spacing: SDSpace.s2) {

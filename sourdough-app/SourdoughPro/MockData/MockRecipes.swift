@@ -4,6 +4,28 @@ enum MockRecipes {
 
     static let classicSourdoughId = UUID(uuidString: "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa01")!
 
+    /// Maps recipe name → bundled asset name in Assets.xcassets/RecipeImages/
+    static let imageAssets: [String: String] = [
+        "Classic Sourdough":        "recipe-classic-sourdough",
+        "Seeded Rye":               "recipe-seeded-rye",
+        "Jalapeño Cheddar":         "recipe-jalapeno-cheddar",
+        "Pizza Loaf":               "recipe-pizza-loaf",
+        "Soft Sourdough Loaf":      "recipe-soft-sourdough-loaf",
+        "Rosemary Focaccia":        "recipe-focaccia",
+        "Roasted Garlic & Asiago":  "recipe-roasted-garlic-asiago",
+        "Honey Oat Loaf":           "recipe-honey-oat-loaf",
+        "Cinnamon Raisin Swirl":    "recipe-cinnamon-raisin",
+        "Lemon Blueberry":          "recipe-lemon-blueberry",
+        "New York-Style Bagels":    "recipe-bagels",
+        "Chocolate Cherry Boule":   "recipe-chocolate-cherry",
+        "Sun-Dried Tomato & Olive": "recipe-sun-dried-tomato-olive",
+        "Country Loaf":             "recipe-country-loaf",
+        "Walnut Cranberry Boule":   "recipe-walnut-cranberry",
+        "Sourdough Baguette":       "recipe-baguette",
+        "Hearty Whole Wheat":       "recipe-whole-wheat",
+        "Pure Rye Sourdough":       "recipe-rye-sourdough",
+    ]
+
     static let all: [Recipe] = [
         classicSourdough,
         jalapeñoCheddar,
@@ -23,7 +45,11 @@ enum MockRecipes {
         baguette,
         wholeWheat,
         ryeSourdough,
-    ]
+    ].map { recipe in
+        var r = recipe
+        r.imageUrl = imageAssets[recipe.name]
+        return r
+    }
 
     // MARK: 1. Classic Sourdough (featured)
     static let classicSourdough: Recipe = Recipe(
