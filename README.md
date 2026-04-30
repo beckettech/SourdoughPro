@@ -6,13 +6,16 @@
 
 **The intelligent sourdough companion for serious home bakers.**
 
+[![Status: WIP](https://img.shields.io/badge/status-work%20in%20progress-yellow?style=flat-square)](https://github.com/beckettech/SourdoughPro)
 [![iOS 17+](https://img.shields.io/badge/iOS-17%2B-black?style=flat-square&logo=apple)](https://developer.apple.com/ios/)
 [![Swift 5.9](https://img.shields.io/badge/Swift-5.9-orange?style=flat-square&logo=swift)](https://swift.org)
 [![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-blue?style=flat-square)](https://developer.apple.com/xcode/swiftui/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![CI](https://github.com/beckettech/SourdoughPro/actions/workflows/ci.yml/badge.svg)](https://github.com/beckettech/SourdoughPro/actions)
 
-[Features](#-features) · [Screenshots](#-screenshots) · [Tech Stack](#-tech-stack) · [Getting Started](#-getting-started) · [Roadmap](#-roadmap)
+> **🚧 This app is currently in active development and not yet available on the App Store.**
+> Features shown below reflect the current build. Backend integrations (Supabase, RevenueCat) are stubbed — the app runs fully on local mock data today.
+
+[Features](#-features) · [Screenshots](#-screenshots) · [Tech Stack](#-tech-stack) · [Roadmap](#-roadmap)
 
 ---
 
@@ -153,41 +156,6 @@ Every `Service` is a protocol. Debug builds use `MockXxxService` (fully offline)
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Xcode 15+ (iOS 17 SDK)
-- macOS 14+
-
-### Build & Run
-
-```bash
-git clone https://github.com/beckettech/SourdoughPro.git
-cd SourdoughPro/sourdough-app
-
-# Copy the secrets template and optionally add your OpenAI key
-cp Config/Secrets.xcconfig.template Config/Secrets.xcconfig
-# OPENAI_API_KEY = sk-...   ← add yours here for live AI analysis
-
-open SourdoughPro.xcodeproj
-# Press ⌘R — app launches with full mock data, no backend required
-```
-
-> **No API key needed to run.** The app ships with a mock AI engine that returns realistic canned results. Add your OpenAI key only when you want to test live vision scoring.
-
-### Run Tests
-
-```bash
-xcodebuild test \
-  -project SourdoughPro.xcodeproj \
-  -scheme SourdoughPro \
-  -destination 'platform=iOS Simulator,name=iPhone 16 Pro'
-```
-
-41 unit tests across baker's percentage math, feeding scheduler edge cases, temperature adjustment formulas, and readiness status logic.
-
----
-
 ## 📊 Market Opportunity
 
 | Signal | Data |
@@ -228,19 +196,6 @@ xcodebuild test \
 
 ---
 
-## 🤝 Contributing
-
-Pull requests welcome. Please open an issue first for significant changes.
-
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feat/your-feature`)
-3. Commit your changes
-4. Open a PR against `main`
-
-See [`sourdough-app/CLAUDE.md`](sourdough-app/CLAUDE.md) for architectural context and coding conventions.
-
----
-
 ## 📄 License
 
 MIT — see [LICENSE](LICENSE) for details.
@@ -249,8 +204,10 @@ MIT — see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
+🚧 **Active development** — App Store launch coming soon.
+
 Made with 🍞 and a lot of patience.
 
-**[⭐ Star this repo](https://github.com/beckettech/SourdoughPro)** if you find it useful!
+**[⭐ Star this repo](https://github.com/beckettech/SourdoughPro)** to follow along.
 
 </div>
