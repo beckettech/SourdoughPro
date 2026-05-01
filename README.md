@@ -15,11 +15,54 @@
 > **🚧 This app is currently in active development and not yet available on the App Store.**
 > Features shown below reflect the current build. Backend integrations (Supabase, RevenueCat) are stubbed — the app runs fully on local mock data today.
 
-[Features](#-features) · [Screenshots](#-screenshots) · [Tech Stack](#-tech-stack) · [Roadmap](#-roadmap)
+[Features](#-features) · [Tech Stack](#-tech-stack) · [Roadmap](#-roadmap)
 
 ---
 
 </div>
+
+## 📱 Features
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/01-home.png" width="200" alt="Home Screen" /><br/>
+      <b>Home</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/02-starter-detail.png" width="200" alt="Starter Detail" /><br/>
+      <b>Starter Detail</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/03-recipe-library.png" width="200" alt="Recipe Library" /><br/>
+      <b>Recipe Library</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/04-bake-timer.png" width="200" alt="Bake Timer" /><br/>
+      <b>Bake Timer</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/05-ai-analysis.png" width="200" alt="AI Analysis" /><br/>
+      <b>AI Analysis</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/06-recipe-detail.png" width="200" alt="Recipe Detail" /><br/>
+      <b>Recipe Detail</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/07-add-feeding.png" width="200" alt="Add Feeding" /><br/>
+      <b>Log a Feeding</b>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/08-profile.png" width="200" alt="Profile" /><br/>
+      <b>Profile & Stats</b>
+    </td>
+  </tr>
+</table>
+
+---
 
 ## The Problem
 
@@ -74,51 +117,6 @@ Never throw starter away uninformed. The discard calculator shows exactly how mu
 - Full recipe library (free tier: 5 recipes)
 - Advanced analytics & bake history export
 - Priority email support
-
----
-
-## 📱 Screenshots
-
-> *Screenshots taken on iPhone 17 Pro Max simulator running iOS 26.*
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="docs/screenshots/01-home.png" width="200" alt="Home Screen" /><br/>
-      <b>Home</b>
-    </td>
-    <td align="center">
-      <img src="docs/screenshots/02-starter-detail.png" width="200" alt="Starter Detail" /><br/>
-      <b>Starter Detail</b>
-    </td>
-    <td align="center">
-      <img src="docs/screenshots/03-recipe-library.png" width="200" alt="Recipe Library" /><br/>
-      <b>Recipe Library</b>
-    </td>
-    <td align="center">
-      <img src="docs/screenshots/04-bake-timer.png" width="200" alt="Bake Timer" /><br/>
-      <b>Bake Timer</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="docs/screenshots/05-ai-analysis.png" width="200" alt="AI Analysis" /><br/>
-      <b>AI Analysis</b>
-    </td>
-    <td align="center">
-      <img src="docs/screenshots/06-recipe-detail.png" width="200" alt="Recipe Detail" /><br/>
-      <b>Recipe Detail</b>
-    </td>
-    <td align="center">
-      <img src="docs/screenshots/07-add-feeding.png" width="200" alt="Add Feeding" /><br/>
-      <b>Log a Feeding</b>
-    </td>
-    <td align="center">
-      <img src="docs/screenshots/08-profile.png" width="200" alt="Profile" /><br/>
-      <b>Profile & Stats</b>
-    </td>
-  </tr>
-</table>
 
 ---
 
