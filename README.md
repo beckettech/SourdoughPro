@@ -12,8 +12,11 @@
 [![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-blue?style=flat-square)](https://developer.apple.com/xcode/swiftui/)
 [![CI](https://github.com/beckettech/SourdoughPro/actions/workflows/ci.yml/badge.svg)](https://github.com/beckettech/SourdoughPro/actions)
 
-> **🚧 This app is currently in active development and not yet available on the App Store.**
-> Features shown below reflect the current build. Backend integrations (Supabase, RevenueCat) are stubbed — the app runs fully on local mock data today.
+<br/>
+
+[![Coming Soon to the App Store](https://img.shields.io/badge/App_Store-Coming_Soon-black?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/beckettech/SourdoughPro)
+
+> **🚧 Coming soon to the Apple App Store.** Active development — features shown below reflect the current build. ⭐ Star this repo to get notified at launch.
 
 [Features](#-features) · [Tech Stack](#-tech-stack) · [Roadmap](#-roadmap)
 
@@ -178,6 +181,7 @@ Every `Service` is a protocol. Debug builds use `MockXxxService` (fully offline)
 - [ ] App Store screenshots & metadata
 - [ ] RevenueCat subscription wiring
 - [ ] Supabase auth (optional — local-first ships first)
+- [ ] **Submit to Apple App Store** 🍎
 
 **v1.5 — Depth**
 - [ ] Swift Charts activity sparkline on starter detail
@@ -203,6 +207,8 @@ MIT — see [LICENSE](LICENSE) for details.
 <div align="center">
 
 🚧 **Active development** — App Store launch coming soon.
+
+[![Coming Soon to the App Store](https://img.shields.io/badge/App_Store-Coming_Soon-black?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/beckettech/SourdoughPro)
 
 Made with 🍞 and a lot of patience.
 
