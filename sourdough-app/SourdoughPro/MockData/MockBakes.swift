@@ -25,9 +25,9 @@ enum MockBakes {
             stepHistory: [],
             rating: 5
         ),
-        // Rosemary Focaccia — Gerty's debut bake, crowd favourite
+        // Rosemary Focaccia — Doughy's debut bake, crowd favourite
         BakeSession(
-            starterId: MockStarters.gertyId,
+            starterId: MockStarters.doughyId,
             recipeId: MockRecipes.focaccia.id,
             recipeName: "Rosemary Focaccia",
             startedAt: Calendar.current.date(byAdding: .day, value: -8, to: Date()) ?? Date(),
@@ -47,9 +47,9 @@ enum MockBakes {
             stepHistory: [],
             rating: 5
         ),
-        // Whole Wheat — Gerty, slight under-proof (3 stars)
+        // Whole Wheat — Doughy, slight under-proof (3 stars)
         BakeSession(
-            starterId: MockStarters.gertyId,
+            starterId: MockStarters.doughyId,
             recipeId: MockRecipes.wholeWheat.id,
             recipeName: "Whole Wheat Sourdough",
             startedAt: Calendar.current.date(byAdding: .day, value: -16, to: Date()) ?? Date(),

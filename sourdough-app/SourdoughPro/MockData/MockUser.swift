@@ -3,8 +3,8 @@ import Foundation
 enum MockUser {
     static let sample: User = {
         var u = User(
-            email: "beck@sourdough.app",
-            displayName: "Beck",
+            email: "emily@sourdough.app",
+            displayName: "Emily",
             avatarUrl: nil,
             subscriptionTier: .pro,
             subscriptionExpiresAt: Calendar.current.date(byAdding: .year, value: 1, to: Date()),

@@ -4,9 +4,9 @@ enum MockStarters {
 
     /// Deterministic UUIDs so mocks stay stable across relaunches.
     static let bubblesId = UUID(uuidString: "11111111-1111-1111-1111-111111111111")!
-    static let gertyId   = UUID(uuidString: "22222222-2222-2222-2222-222222222222")!
+    static let doughyId   = UUID(uuidString: "22222222-2222-2222-2222-222222222222")!
 
-    static let all: [Starter] = [bubbles, gerty]
+    static let all: [Starter] = [bubbles, doughy]
 
     /// Primary "healthy, recently fed" starter used on the Home card.
     static let bubbles: Starter = {
@@ -32,15 +32,15 @@ enum MockStarters {
     }()
 
     /// Secondary starter — whole-wheat, slightly overdue for a feed (triggers warning state).
-    static let gerty: Starter = {
+    static let doughy: Starter = {
         let now = Date()
         let created = Calendar.current.date(byAdding: .day, value: -42, to: now) ?? now
         // Last fed ~30 hours ago — intentionally overdue to demo the warning banner
         let lastFed = now.addingTimeInterval(-30 * 3600)
-        let feedings = makeFeedings(starterId: gertyId, count: 20, spacingHours: 24, endingAt: lastFed)
+        let feedings = makeFeedings(starterId: doughyId, count: 20, spacingHours: 24, endingAt: lastFed)
         var s = Starter(
-            id: gertyId,
-            name: "Gerty",
+            id: doughyId,
+            name: "Doughy",
             createdAt: created,
             flourType: .wholeWheat,
             hydration: 80,
